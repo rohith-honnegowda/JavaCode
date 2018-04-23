@@ -53,21 +53,52 @@ public class Graph {
 		}
 	}
 	
+
+	public void DFSUtil(boolean[] visited, int s) {
+		visited[s] = true;
+		System.out.print(s + " -> ");
+		LinkedList<Integer> nodes = this.adjList[s];
+		for(Integer i: nodes) {
+			if(!visited[i]) {
+				DFSUtil(visited, i);
+			}
+		}
+	}
+	
+	public void DFS(int s) {
+		boolean[] visited = new boolean[this.V];
+		visited[s] = true;
+		DFSUtil(visited, s);
+			
+		
+	}
+	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         int V = 4;
         Graph graph = new Graph(V);
+
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(1, 2);
         graph.addEdge(2, 0);
         graph.addEdge(2, 3);
         graph.addEdge(3, 3);
+        //graph.addEdge(3, 3);
+        //graph.addEdge(3, 3);
+        //graph.addEdge(3, 4);
+      //graph.BFS(2);
+        // print the adjacency list representation of 
+        // the above graph
+        //graph.displayGraph(graph);
+        graph.DFS(2);
         //graph.addEdge(3, 4);
       graph.BFS(2);
         // print the adjacency list representation of 
         // the above graph
         graph.displayGraph(graph);
+
 	}
 
 }
