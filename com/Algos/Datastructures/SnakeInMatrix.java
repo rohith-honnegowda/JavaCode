@@ -75,7 +75,8 @@ public class SnakeInMatrix {
 
 	
 	public static void main(String[] args) {
-        int grid [][] = {{1, 2, 1, 2},
+
+        int[][] grid = {{1, 2, 1, 2},
                 		 {7, 7, 2, 5},
             			 {6, 4, 3, 4},
             			 {1, 2, 2, 5}};
